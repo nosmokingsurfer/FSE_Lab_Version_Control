@@ -5,28 +5,30 @@ def test_add():
 
 def test_remove():
 
+    print("Trying to remove existing key once ...")
     try:
-        print("Trying to remove")
         data = {"one": 1, "two": 2}
         test = Storage(data)
-        test.remove("one")
+        key = "two"
+        test.remove(key)
     except KeyError as e:
         print(e)
-        print("Remove function failed with data:", data)
+        print("Remove function failed with data:", data, " and key:", key)
     else:
-        print("OK")
+        assert key not in test.data, "The key \"{}\" was not removed from storage.".format(key)
 
-    
+    print("Trying to remove key that does not exist ...")
     try:
-        print("Trying to remove twice...")
+        got_key_error = False
         data = {"one" : 1, "two" : 2}
-        test.remove("one")
-        test.remove("one")
+        test = Storage(data)
+        key = "three"
+        test.remove(key)
     except KeyError as e:
-        print("OK")
-    else:
-        print("Not OK")
-        print("Failed on data:", data)
+        got_key_error = True
+        assert str(e) == "'Key \"%s\" does not exist'" % key
+
+    assert got_key_error, "Key error is not raised when key does not exist."
 
     pass
 
