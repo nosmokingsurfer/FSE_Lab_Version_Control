@@ -6,7 +6,9 @@ def test_add(): #Катя
     value = 'ItsAValue'
     
     st.add(key, value)
+    assert st.data[key] == value, "The key {} is absent or value is not equal to expected one {}".format(key, value)
     print(st)
+
 
 def test_remove():
     pass

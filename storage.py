@@ -19,10 +19,8 @@ class Storage:
         pass
 
     def add(self, key, value):   #Катя
-        key = key
-        value = value
 
-        if key in self.data.keys():
+        if key in self.data:
             raise Exception
         else:
             d = {key : value}
