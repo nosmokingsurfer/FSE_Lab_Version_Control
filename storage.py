@@ -18,7 +18,7 @@ class Storage:
     def set(self):
         pass
 
-    def add(self):   #Катя
+    def add(self, key, value):   #Катя
         key = key
         value = value
 
