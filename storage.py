@@ -18,6 +18,8 @@ class Storage:
     def set(self, key, value):
         if key in self.data:
             self.data[key] = value
+        else:
+            raise KeyError(f'Key {key} is absent')
     
     def add(self):
         pass
