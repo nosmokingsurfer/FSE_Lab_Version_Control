@@ -1,7 +1,6 @@
 from storage import Storage
 
-def test_add():
-    def test_add(): #Катя
+def test_add(): #Катя
     st = Storage({'a': 1, 'b': 2})
     key = 'ItsAKEy'
     value = 'ItsAValue'
