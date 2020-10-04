@@ -7,7 +7,17 @@ def test_remove():
     pass
 
 def test_set():
-    pass
+    st = Storage({'a': 1, 'b': 2})
+    st.set('b', 3)
+    assert st.data['b'] == 3, "Value for the key 'b' is not equal to expected"
+
+    got_key_error = False
+    try:
+        st.set('c', 3)
+    except KeyError as err:
+        got_key_error = True
+        assert str(err) == "'Key c is absent'"
+    assert got_key_error, "KeyError is not raised when key is absent"
 
 def test_get():
     st = Storage({'a': 1, 'b': 2})
