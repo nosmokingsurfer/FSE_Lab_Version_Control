@@ -17,7 +17,6 @@ class Storage:
             del self.data[key]
         else:
             raise KeyError("Key \"%s\" does not exist" % key)
-        pass
 
     def set(self):
         pass
