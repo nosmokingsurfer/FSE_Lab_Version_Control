@@ -1,5 +1,4 @@
 from storage import Storage
-import gc
 
 def test_add():
     pass
