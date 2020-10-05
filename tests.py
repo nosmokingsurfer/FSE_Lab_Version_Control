@@ -1,7 +1,14 @@
 from storage import Storage
 
-def test_add():
-    pass
+def test_add(): #Катя
+    st = Storage({'a': 1, 'b': 2})
+    key = 'ItsAKEy'
+    value = 'ItsAValue'
+    
+    st.add(key, value)
+    assert st.data[key] == value, "The key {} is absent or value is not equal to expected one {}".format(key, value)
+    print(st)
+
 
 def test_remove():
     pass

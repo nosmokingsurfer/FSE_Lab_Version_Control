@@ -20,6 +20,12 @@ class Storage:
             self.data[key] = value
         else:
             raise KeyError(f'Key {key} is absent')
-    
-    def add(self):
-        pass
+                    
+    def add(self, key, value):
+
+        if key in self.data:
+            raise Exception
+        else:
+            d = {key : value}
+            self.data.update(d)
+            print(self.data)
